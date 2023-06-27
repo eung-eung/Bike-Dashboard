@@ -337,9 +337,9 @@
 }
 
 #create_btn {
-    background: #eedfff;
+    background: #ba42ff;
     border: none;
-    color: #ba42ff;
+    color: #fff;
     padding: 10px;
     border-radius: 20px;
     position: absolute;
@@ -350,6 +350,7 @@
     font-weight: 600;
     cursor: pointer;
     width: 100px;
+    margin-top: 5px;
 }
 
 #delete_btn {
