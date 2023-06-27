@@ -51,9 +51,12 @@ const setRotate = (ele, deg) => {
 document.querySelector('#email').addEventListener('input', (e) => checkValid_Email(e.target.value, e.target))
 
 const handle_switch_login = (ele) => {
-
+    clearMsg('warning_sign')
+    clearMsg('warning_password')
+    clearMsg('warning_mail')
     setRotate(document.querySelector('.drop'), '-100deg')
         .then(() => {
+
             document.querySelector('#email').value = ''
             document.querySelector('#password').value = ''
             document.querySelector('.drop').style.transform = 'none'
