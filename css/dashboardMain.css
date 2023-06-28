@@ -436,6 +436,8 @@ label {
     padding: 4px;
 }
 
+#create,
+#delete,
 #update {
     color: #ffffff;
     background: #811aa0;

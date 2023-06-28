@@ -50,11 +50,11 @@ const checkYear = (year) => {
 
 }
 // close popup
-const close_popup = () => {
-    popup.style.display = 'none'
-    overlay.style.display = 'none'
-}
-close_btn.addEventListener('click', () => close_popup())
+// const close_popup = () => {
+//     popup.style.display = 'none'
+//     overlay.style.display = 'none'
+// }
+// close_btn.addEventListener('click', () => close_popup())
 
 const check_valid_year = (year, ele) => {
     if (year == "") {
@@ -89,13 +89,13 @@ const check_valid_all = (ele) => {
 
     console.log(checkPrice(price_input.value.split('.').join('')))
     if (!(checkPrice(price_input.value.split('.').join('')) && checkYear(year_input.value) && name_input.value.trim() != "")) {
-        createMsg(ele.parentNode, 'Vui lòng nhập đúng các thông tin', 'warning_submit')
+        createMsg(ele.parentNode, 'Please input full details', 'warning_submit')
         return
     }
     year_input.value = ""
     name_input.value = ""
     price_input.value = ""
-    close_popup()
+    // close_popup()
 }
 
 
@@ -109,47 +109,47 @@ const modal_popup = document.querySelector('#modal_popup')
 
 
 
-create_btn.addEventListener('click', function () {
-    modal_popup.style.display = 'block'
-    overlay.style.display = 'block'
-    modal_popup.innerHTML = `
-    <div class="input_group">
-            <label for="">Name</label>
-            <input  id="name_input" type="text">
-        </div>
-        <div class="input_group">
-            <label for="">Brand</label>
-            <select name="list_brand" id="brand">
-                <option value="1">Brand 1</option>
-                <option value="2">Brand 2</option>
-                <option value="3">Brand 3</option>
-                <option value="4">Brand 4</option>
+// create_btn.addEventListener('click', function () {
+//     modal_popup.style.display = 'block'
+//     overlay.style.display = 'block'
+//     modal_popup.innerHTML = `
+//     <div class="input_group">
+//             <label for="">Name</label>
+//             <input  id="name_input" type="text">
+//         </div>
+//         <div class="input_group">
+//             <label for="">Brand</label>
+//             <select name="list_brand" id="brand">
+//                 <option value="1">Brand 1</option>
+//                 <option value="2">Brand 2</option>
+//                 <option value="3">Brand 3</option>
+//                 <option value="4">Brand 4</option>
 
-            </select>
-        </div>
-        <div class="input_group">
-            <label for="">Category</label>
-            <select name="list_category" id="category">
-                <option value="1">Category 1</option>
-                <option value="2">Category 2</option>
-                <option value="3">Category 3</option>
-                <option value="4">Category 4</option>
+//             </select>
+//         </div>
+//         <div class="input_group">
+//             <label for="">Category</label>
+//             <select name="list_category" id="category">
+//                 <option value="1">Category 1</option>
+//                 <option value="2">Category 2</option>
+//                 <option value="3">Category 3</option>
+//                 <option value="4">Category 4</option>
 
-            </select>
-        </div>
-        <div class="input_group">
-            <label for="">Model Year</label>
-            <input onInput={check_valid_year(this.value,this)} id="year_input" type="text">
-        </div>
-        <div class="input_group">
-            <label for="price_input">Price</label>
-            <input  onInput={check_valid_price(this.value,this)} id="price_input" type="text">
-        </div>
-        <div style="display: flex;justify-content: center;flex-direction: column;align-items: center;">
-            <button onClick={check_valid_all(this)} id="update">Create</button>
-        </div>
+//             </select>
+//         </div>
+//         <div class="input_group">
+//             <label for="">Model Year</label>
+//             <input onInput={check_valid_year(this.value,this)} id="year_input" type="text">
+//         </div>
+//         <div class="input_group">
+//             <label for="price_input">Price</label>
+//             <input  onInput={check_valid_price(this.value,this)} id="price_input" type="text">
+//         </div>
+//         <div style="display: flex;justify-content: center;flex-direction: column;align-items: center;">
+//             <button onClick={check_valid_all(this)} id="update">Create</button>
+//         </div>
 
 
-        <div onClick={close_popup()} id="close"><i class="fa-solid fa-xmark"></i></div>
-    `
-})
+//         <div onClick={close_popup()} id="close"><i class="fa-solid fa-xmark"></i></div>
+//     `
+// })
